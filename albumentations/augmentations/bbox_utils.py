@@ -346,9 +346,9 @@ def check_bbox(bbox):
                 "to be in the range [0.0, 1.0], got {value}.".format(bbox=bbox, name=name, value=value)
             )
     x_min, y_min, x_max, y_max = bbox[:4]
-    if x_max < x_min:
+    if x_max <= x_min:
         raise ValueError("x_max is less than or equal to x_min for bbox {bbox}.".format(bbox=bbox))
-    if y_max < y_min:
+    if y_max <= y_min:
         raise ValueError("y_max is less than or equal to y_min for bbox {bbox}.".format(bbox=bbox))
 
 
